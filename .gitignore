@@ -1,3 +1,19 @@
+# Extras
+*.pyc 
+
+settings.py 
+
+*.json 
+
+*~ 
+
+posts/migrations
+
+settings_secret.py
+
+
+media/temp 
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
