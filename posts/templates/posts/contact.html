@@ -1,0 +1,19 @@
+{% extends 'posts/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div id="images" align="center">
+  <a href="https://github.com/ryanbabida">
+  	<img src="{% static "img/github.png" %}", height="130" width="130" hspace="75">
+  </a>
+  <a href="https://www.linkedin.com/in/ryan-babida-3a1bb473">
+  	<img src="{% static "img/linkedin.png" %}" hspace="75">
+  </a>
+  <a href="mailto:ryan.babida@gmail.com">
+  	<img src="{% static "img/gmail.png" %}" hspace="75">
+  </a>
+  <a href="{% static "img/ryanbabida_resume.pdf" %}">
+  	<img src="{% static "img/resume.png" %}" hspace="75">
+  </a>
+</div>
+{% endblock %}

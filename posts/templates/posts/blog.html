@@ -1,0 +1,102 @@
+{% extends 'posts/base.html' %}
+
+{% block content %}
+<div class="content-body">
+   	{% for post in latest_post_list %}
+        <p class="project-title"> {{ post }} </p>
+        <p align="center"> {{ post.created_date }} </p>
+        
+    		{% if post.photo1 %}
+    			<center><img src='{{ post.photo1.url }}'/></center>
+    		{% endif %}
+            <p> {{ post.content1 }} </p>
+
+            {% if post.photo2 %}
+                <center><img src='{{ post.photo2.url }}'/></center>
+            {% endif %}
+            <p> {{ post.content2 }} </p>
+
+            {% if post.photo3 %}
+                <center><img src='{{ post.photo3.url }}'/></center>
+            {% endif %}
+            <p> {{ post.content3 }} </p>
+
+            {% if post.photo4 %}
+                <center><img src='{{ post.photo4.url }}'/></center>
+            {% endif %}
+            <p> {{ post.content4 }} </p>
+
+            {% if post.photo5 %}
+                <center><img src='{{ post.photo5.url }}'/></center>
+            {% endif %}
+            <p> {{ post.content5 }} </p>
+	{% endfor %}
+</div>
+
+<div id="sidebarRight">
+    <div id="sidebarText>">
+      <p style="padding-left:0px">TAGS</p>
+      <ul style="padding-left:0px">
+        {% for tag in view.get_tag_list %}
+          {% if tag %}
+            <li> <a href="{% url 'posts:tag' tag %}" id="sidebarText">{{ tag }}</a> </li>   
+          {% endif %}     
+        {% endfor %}
+      </ul>
+      <p style="padding-left:0px">ARCHIVE</p>
+
+      <ul style="padding-left:0px">
+        <li> <a href="{% url 'posts:blog' %}">All</a> <li>
+        {% for year, months in view.get_year_month_data.items %}
+            <li> <a href="{% url 'posts:year' year %}"  id="sidebarText">{{ year }}</a> </li>
+            <ul>
+              {% for month in months %}
+
+                <li> <a href="{% url 'posts:month' year month %}" id="sidebarText">
+                {% if month == 1 %}
+                    January
+                {% endif %}
+                {% if month == 2 %}
+                    February
+                {% endif %}
+                {% if month == 3 %}
+                    March
+                {% endif %}
+                {% if month == 4 %}
+                    April
+                {% endif %}
+                {% if month == 5 %}
+                    May
+                {% endif %}
+                {% if month == 6 %}
+                    June
+                {% endif %}
+                {% if month == 7 %}
+                    July
+                {% endif %}
+                {% if month == 8 %}
+                    August
+                {% endif %}
+                {% if month == 9 %}
+                    September
+                {% endif %}
+                {% if month == 10 %}
+                    Ocotober
+                {% endif %}
+                {% if month == 11 %}
+                    November
+                {% endif %}
+                {% if month == 12 %}
+                    December
+                {% endif %}
+
+                </a> </li>
+              {% endfor %}
+            </ul>
+
+        {% endfor %}
+      </ul>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'posts/base.html' %}
+
+{% block content %}
+<div class="content-body">
+   	{% for project in projects_list %}
+        <p class="project-title"> {{ project }} </p>
+        {% if project.photo1 %}
+          <center><img src='{{ project.photo1.url }}'/></center>
+        {% endif %}
+        <p> {{ project.content1 }} </p>
+
+        {% if project.photo2 %}
+          <center><img src='{{ project.photo2.url }}'/></center>
+        {% endif %}
+        <p> {{ project.content2 }} </p>
+
+        {% if project.photo3 %}
+          <center><img src='{{ project.photo3.url }}'/></center>
+        {% endif %}
+        <p> {{ project.content3 }} </p>
+
+        {% if project.photo4 %}
+          <center><img src='{{ project.photo4.url }}'/></center>
+        {% endif %}
+        <p> {{ project.content4 }} </p>
+
+        <p> Project Link: <a href="{{ project.link }}" id="sidebarText">{{ project.link }}</a> </p>
+		<p> Technologies Used: {{ project.tech_list }} </p>
+        <p> Updated On: {{ project.modified_date }} </p>
+	{% endfor %}
+</div>
+
+  <div id="sidebarRight">
+    <div id="sidebarText>">
+      <p style="padding-left:0px">CATEGORIES</p>
+      <ul style="padding-left:0px">
+        {% for cat in view.get_categories %}
+          {% if cat %}
+            <li> <a href="{% url 'posts:categories' cat %}" id="sidebarText">{{ cat }}</a> </li>
+          {% endif %}     
+        {% endfor %}
+      </ul>
+  </div>
+</div>
+{% endblock %}

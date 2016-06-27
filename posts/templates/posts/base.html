@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+body {
+  margin: 0;
+  background-color: #000;
+}
+
+.content-body {
+  width: 80%;
+  padding-left: 10px;
+  padding-right: 20px;
+  background-color: #000;
+  float: left;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: #4CAF50;}
+
+ul.topnav li.left { float: left;
+                    font-size: 40px;
+                    font-family: "Tahoma", sans-serif; 
+                    padding: 14px   }
+
+ul.topnav li.right { float: right;
+                     font-size: 24px;
+                     font-family: "Tahoma", sans-serif; 
+                     padding-top: 24px  }
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right,
+    ul.topnav li {float: none;}
+}
+
+h1, h3, p {
+  font-family: "Tahoma", sans-serif; 
+  color: white;
+}
+
+a {
+  text-decoration: underline;
+}
+
+.project-title {
+  font-family: "Tahoma", sans-serif; 
+  color: white;
+  font-size: 40px;
+  text-align: center;
+}
+
+#images {
+    white-space: nowrap;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
+
+.self-photo {
+   padding-left: 100px;
+   padding-top: 200px;
+   float: left;
+}
+
+.left { 
+  float: left; 
+  padding: 0 20px 40px 50px; 
+}
+
+#sidebarRight {
+  float: right;
+  width: 10%;
+  padding-top: 1em;
+  border-left: 1px solid white;
+  padding-left: 20px;
+}
+
+#sidebarText {
+  font-family: "Tahoma", sans-serif; 
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<ul class="topnav">
+  <li class="left"><a href="">Ryan Babida</a></li>
+  <li class="right"><a href="{% url 'posts:blog' %}">Blog</a></li>
+  <li class="right"><a href="{% url 'posts:contact' %}">GitHub/Contact</a></li>
+  <li class="right"><a href="{% url 'posts:projects' %}">Projects</a></li>
+  <li class="right"><a href="{% url 'posts:index' %}">Home</a></li>
+</ul>
+
+</div>
+
+<div style="padding:0 16px;">
+  {% block content %}
+  {% endblock %}
+</div>
+
+</body>
+</html>
+

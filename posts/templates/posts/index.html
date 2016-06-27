@@ -1,0 +1,27 @@
+{% extends 'posts/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<html>
+    <body>
+
+
+	<div style="color:white; padding-top:100px"> <img src="{% static "img/me.jpg" %}" height="500" width="400" alt="Headshot photo" class="left" /> 
+	<p style="font-size:30px;">
+		I am a 4th year Computer Science student at UC Davis and I am an aspiring software engineer. My main interests are Machine Learning, Big Data, Algorithms, and Web Development. I am passionate about programming and I try to learn in any opportunity I can. 
+	</p>
+	<p style="font-size:30px;">
+		Besides coding behind my laptop and beautiful monitors, I like to play drums and I am a jazz enthusiast.
+	</p>
+
+	<p style="font-size:30px;">
+		Here is my <a href="{% static "img/ryanbabida_resume.pdf" %}" > resume</a> and free to reach me at <a href="mailto:ryan.babida@gmail.com" > ryan.babida@gmail.com</a>. 
+	</p>
+	</div>
+
+    </body>
+
+</html>
+
+{% endblock %}
